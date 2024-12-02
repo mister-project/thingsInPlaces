@@ -12,38 +12,41 @@
 </head>
 
 <body>
-    <input id="csv" type="file">
-    <button id="loadOneTable">Загрузить в LS исходную таблицу</button>
-    <button id="hideOneTable">Скрыть исходную таблицу</button>
-    <button id="openModal">Открыть форму</button>
-    <button id="clearLS">ОчиститьXXXLS</button>
-    <div>
-        <button id="saveCSV">Отправить CSV</button>
+    <div id="containerOne">
+        <input id="csv" type="file">
+        <button id="loadOneTable">Загрузить в LS исходную таблицу</button>
+        <button id="hideOneTable">Скрыть исходную таблицу</button>
+        <button id="openModal">Открыть форму</button>
+        <button id="clearLS">ОчиститьXXXLS</button>
+        <div>
+            <button id="saveCSV">Отправить CSV</button>
+        </div>
+
+
+        <table id="thingsAndPlases">
+            <caption>
+                <h3>Вещи на местах</h3>
+            </caption>
+            <thead>
+                <th>
+                    id_Записи
+                </th>
+                <th>
+                    Имя_вещи
+                </th>
+                <th>
+                    Помещение
+                </th>
+                <th>
+                    место
+                </th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
     </div>
-
-
-    <table id="thingsAndPlases">
-        <caption>
-            <h3>Вещи на местах</h3>
-        </caption>
-        <thead>
-            <th>
-                id_Записи
-            </th>
-            <th>
-                Имя_вещи
-            </th>
-            <th>
-                Помещение
-            </th>
-            <th>
-                место
-            </th>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
 
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -59,15 +62,42 @@
 
 
             </form>
-            <button id="submit">Отправить в журнал</button>
+            <button id="submit">Отправить в таблицу</button>
         </div>
-
 
     </div>
 
+    <div id="containerTwo">
+
+        <button id="openModalPlace">Открыть форму места</button>
+
+        <div>
+            <button id="saveCsvPlace">Отправить в CSV места</button>
+        </div>
 
 
+        <table id="plase">
+            <caption>
+                <h3>Места</h3>
+            </caption>
+            <thead>
+                <th>
+                    id_Места
+                </th>
+                <th>
+                    Имя_места
+                </th>
+                <th>
+                    Имя_помещения
+                </th>
 
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
 </body>
 
 </html>

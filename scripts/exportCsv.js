@@ -42,5 +42,5 @@ try {
 try {
     exportCsv('#naprStv2', 'tbody', 'saveCSV', ';', 'napr.csv');
 } catch (error) {
-    console.log('"ИТОГОВАЯ ТАБЛИЦА НАПРАВЛЕНИЙ" не доступна')
+    console.log('вторая таблица - не работает экспорт в CSV')
 }
