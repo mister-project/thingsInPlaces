@@ -23,6 +23,10 @@ const getModalWindow = (modalWindow) => {
 
     tBody.innerHTML = localStorage.getItem(modalWindow.nameLs)
 
+    const now = new Date();
+    let idRow = `${now.getFullYear()}`.slice(-2) + `0${now.getMonth() + 1}`.slice(-2) + `0${now.getDate()}`.slice(-2) + `0${now.getHours()}`.slice(-2) + `0${now.getMinutes()}`.slice(-2) + `0${now.getSeconds()}`.slice(-2)
+    console.log(idRow)
+
     //ОТКРЫТИЕ МОДАЛЬНОГО ОКНА
     openModalBtn.addEventListener('click', () => {
         modal.style.display = 'block';
@@ -41,15 +45,20 @@ const getModalWindow = (modalWindow) => {
     });
 
     const addStr = (tabl) => {
-        console.log(tabl)
+        // console.log(tabl)
         tabl.querySelectorAll('th').forEach((th, index) => {
             //  Добавление в форму модального окна всех остальных полей
             const div = document.createElement('div')
             const input = document.createElement('input')
             input.setAttribute('type', 'text');
+            if (index === 0) {
+                input.value = idRow;
+
+            }
             input.setAttribute('placeholder', th.textContent);
             form.appendChild(div);
             div.appendChild(input);
+
         });
 
         //Добавление строк в таблицу и закрытие модального окна
