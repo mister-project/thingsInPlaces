@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="jmg\clip-art-lose.jpg">
     <script src="./scripts/modalWindow.js" defer></script>
     <script src="./scripts/exportCsv.js" defer></script>
-    <!-- <script src="./scripts/createId.js" defer></script> -->
+
     <title>ВЕЩАТОР</title>
 </head>
 
@@ -24,7 +24,7 @@
         </div>
 
 
-        <table id="thingsAndPlases">
+        <table id="thingsAndPlaсes">
             <caption>
                 <h3>Вещи на местах</h3>
             </caption>
@@ -35,9 +35,7 @@
                 <th>
                     Имя_вещи
                 </th>
-                <th>
-                    Помещение
-                </th>
+
                 <th>
                     место
                 </th>
@@ -55,7 +53,7 @@
             <form id="form">
                 <!-- <div>
                     <select name="" id="points" multiple>
-                        <!-- <option value="30">Значение 1</option>
+                        <option value="30">Значение 1</option>
                         <option value="31">Значение 2</option>
                         <option value="32">Значение 3</option>
                         <option value="33">Значение 4</option> -->
@@ -91,6 +89,36 @@
                 <th>
                     Имя_помещения
                 </th>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+
+<!--Контейнер для помещений-->
+    <div id="containerFree">
+
+        <button id="openModalFlat">Внести помещение</button>
+
+        <div>
+            <button id="saveCsvFlat">Отправить в CSV помещения</button>
+        </div>
+
+
+        <table id="flat">
+            <caption>
+                <h3>Помещения</h3>
+            </caption>
+            <thead>
+            <th>
+                id_Помещения
+            </th>
+            <th>
+                Имя_помещения
+            </th>
 
             </thead>
             <tbody>
