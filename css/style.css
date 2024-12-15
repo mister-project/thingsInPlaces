@@ -75,3 +75,20 @@ input {
     line-height: 130%;
 
 }
+
+select {
+    border: 1px solid rgb(196, 33, 33);
+    border-radius: 60px;
+    margin-bottom: 16px;
+    padding: 24px 22px;
+    font-size: 18px;
+    width: 385px;
+    height: 68px;
+    background: transparent;
+    box-sizing: border-box;
+    outline: none;
+    color: rgb(24, 18, 18);
+    font-family: 'Steppe-ExtraBold', sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+}
