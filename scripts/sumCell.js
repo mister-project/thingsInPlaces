@@ -10,9 +10,9 @@ const getSumCell = (idTable) => {
     })
 }
 try {
-   // document.querySelector('#openModalPlace').addEventListener('click', () => {
+  
        getSumCell('#plase');
-   // })
+
 
 } catch (error) {
     console.log('че - то сумма в поле не работает')
