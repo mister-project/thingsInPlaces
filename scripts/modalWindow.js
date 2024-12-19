@@ -27,9 +27,9 @@ const getModalWindow = (modalWindow) => {
     const now = new Date();
     let idRow = `${now.getFullYear()}`.slice(-2) + `0${now.getMonth() + 1}`.slice(-2) + `0${now.getDate()}`.slice(-2) + `0${now.getHours()}`.slice(-2) + `0${now.getMinutes()}`.slice(-2) + `0${now.getSeconds()}`.slice(-2)
 
-    //Функция для ФОРМИРОВАНИя и вставки строк выпадающего СПИСКА
+    //Функция для ФОРМИРОВАНИя строк выпадающего СПИСКА
     const getSelect = () => {
-        // console.log(document.querySelector('#points'));
+        console.log(document.querySelector('#points'));
         document.querySelector(modalWindow.idTableSelect).querySelector('tbody').querySelectorAll('tr').forEach(str => {
 
             const option = document.createElement('option')
@@ -39,17 +39,12 @@ const getModalWindow = (modalWindow) => {
             option.value = str.querySelectorAll('td')[modalWindow.idColSelect].innerText
 
             document.querySelector('#points').appendChild(option);
-            // console.log(option.innerText)
+            console.log(option.innerText)
         });
-    }
-    const deleteInput = () => {
-        form.querySelectorAll('input').forEach((inp, k) => {
-            console.log(inp, k);
-        })
     }
     //ОТКРЫТИЕ МОДАЛЬНОГО ОКНА
 
-        modal.style.display = 'block';
+    modal.style.display = 'block';
 
 
     // Переброска записи из формы в таблицу
@@ -66,39 +61,26 @@ const getModalWindow = (modalWindow) => {
     const addStr = (tabl) => {
         // console.log(tabl)
         tabl.querySelectorAll('th').forEach((th, index) => {
-            // console.log(th, index)
             //  Добавление в форму модального окна всех остальных полей
             const div = document.createElement('div')
             const input = document.createElement('input')
             const select = document.createElement('select')
-
+            form.appendChild(div);
             input.setAttribute('type', 'text');
             if (index === modalWindow.columnIdStr) {
                 input.value = idRow;
                 input.setAttribute('placeholder', th.textContent);
-                form.appendChild(div);
                 div.appendChild(input);
             }
-            if (index === modalWindow.numberColumnSelect) { //создаем select для выпадающего списка и кладем в нужное поле
-               // tabl.removeChild(th);
-               //  console.log(th);
+            if (index === 2) { //создаем select для выпадающего списка и кладем в нужное поле
                 select.setAttribute('id', "points")
-                form.appendChild(div);
                 div.appendChild(select);
                 getSelect(select);
-                deleteInput();
-
-            } if (index === modalWindow.numberSumColumn) {
-                // input.value = `${form.querySelectorAll('input')[1].innerText}`;
-                form.appendChild(div);
-                div.appendChild(input);
-            }
-            if (index !== modalWindow.numberColumnSelect && index !== modalWindow.numberSumColumn && index !== modalWindow.columnIdStr) {
-
+            } else {
                 input.setAttribute('placeholder', th.textContent);
-                form.appendChild(div);
                 div.appendChild(input);
             }
+
 
         });
 
@@ -112,7 +94,6 @@ const getModalWindow = (modalWindow) => {
                 const newCell = newRow.insertCell(i);
                 newCell.textContent = cells[i].value;
 
-                
             }
         });
 
@@ -171,8 +152,6 @@ try {
         modalButtonId: '#openModalPlace',//'#openModal',//ИД кнопки открытия мобильного окна
         modalId: '#modal',//Ид модального окна
         buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
-        numberColumnSelect: 1, //номер столбца в который будет вставлен вып. список
-        numberSumColumn: 3, //номер столбца для суммирования ячеек под вып. список другой таблицы
         idTableSelect: '#flat', //имя таблицы, содержащей данные для вып. списка
         idColSelect: 1  // номер столбца, содержащего данные для вып.  списка
     }
@@ -180,7 +159,7 @@ try {
         getModalWindow(places);
         console.log('Нажата кнопка мест')
     })
-localStor(places) ;//Запуск функции загрузки данныех из  LS
+    localStor(places) ;//Запуск функции загрузки данныех из  LS
 
 } catch (error) {
     console.log('неполадочки в таблице мест')
@@ -203,7 +182,7 @@ try {
 
     document.querySelector('#openModalFlat').addEventListener('click', () => {
         console.log('нажата кнопка помещений2')
-    getModalWindow(flat);
+        getModalWindow(flat);
     })
     localStor(flat);   //Запуск функции загрузки данныех из  LS
 
