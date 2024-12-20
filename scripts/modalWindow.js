@@ -6,7 +6,7 @@ console.log('modalWindow в работе');
 
 
 const modalWindow = {};
-const localStor = (modalWindow) =>{
+const localStor = (modalWindow) => {
     const container = document.querySelector(modalWindow.containerId)
     let table = container.querySelector(modalWindow.tableId)
     const tBody = table.querySelector('tBody')
@@ -57,7 +57,7 @@ const getModalWindow = (modalWindow) => {
         }
 
     });
-//ФУНКЦИЯ ДОБАВЛЕНИЯ СТРОКИ В ТАБЛИЦУ
+    //ФУНКЦИЯ ДОБАВЛЕНИЯ СТРОКИ В ТАБЛИЦУ
     const addStr = (tabl) => {
         // console.log(tabl)
         tabl.querySelectorAll('th').forEach((th, index) => {
@@ -72,7 +72,7 @@ const getModalWindow = (modalWindow) => {
                 input.setAttribute('placeholder', th.textContent);
                 div.appendChild(input);
             }
-            if (index === 2) { //создаем select для выпадающего списка и кладем в нужное поле
+            if (index === modalWindow.idColSelect) { //создаем select для выпадающего списка и кладем в нужное поле
                 select.setAttribute('id', "points")
                 div.appendChild(select);
                 getSelect(select);
@@ -119,47 +119,48 @@ const getModalWindow = (modalWindow) => {
 }
 
 //Подгрузка таблицы ПО ВЕЩАМ И МЕСТАМ ХРАНЕНИЯ 'thingsInPlaces/index.html'
+//Подзагрузка таблицы по местам
 try {
-    const thingsAndPlases = {
-        columnIdStr: 0, //номер столбца(ячейки) с ИД номером строки
+    const placesAndThings = {
+        columnIdStr: 0,
         containerId: '#containerOne', //ИД контейнера
-        tableId: '#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
-        modalButtonId: '#openModal',//ИД кнопки открытия мобильного окна
-        modalId: '#modal',//Ид модального окна
-        // classButtonClose: 'close', //класс кнопки закрытия
-        // formId: '#form',
-        buttonSubmitId: '#submitThinks', // класс кнопки внесения данных
-        //nameLs: 'tableData',// имя таблицы в localStorage
+        tableId: '#thingsAndPlaсes', //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
+        modalButtonId: '#openModal', //'#openModal',//ИД кнопки открытия мобильного окна
+        modalId: '#modal', //Ид модального окна
+        // buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
+        // idTableSelect: '#plase', //имя таблицы, содержащей данные для вып. списка
+        // idColSelect: 5 // номер столбца, содержащего данные для вып.  списка
     }
-    // document.querySelector('#openModal').addEventListener('click', () => {
-    //     console.log('13');
-
-
     document.querySelector('#openModal').addEventListener('click', () => {
-        getModalWindow(thingsAndPlases)
+        console.log('кнопка');
+
+        getModalWindow(placesAndThings);
+
+
     })
-    localStor(thingsAndPlases); //Запуск функции загрузки данныех из  LS
+    localStor(placesAndThings); //Запуск функции загрузки данныех из  LS
 
 } catch (error) {
-    console.log('неполадочки в таблице вещей и мест')
+    console.log('неполадочки в таблице Вещей и мест')
 }
+
 //Подзагрузка таблицы по местам
 try {
     const places = {
         columnIdStr: 0,
         containerId: '#containerTwo', //ИД контейнера
-        tableId: '#plase',//'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
-        modalButtonId: '#openModalPlace',//'#openModal',//ИД кнопки открытия мобильного окна
-        modalId: '#modal',//Ид модального окна
+        tableId: '#plase', //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
+        modalButtonId: '#openModalPlace', //'#openModal',//ИД кнопки открытия мобильного окна
+        modalId: '#modal', //Ид модального окна
         buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
         idTableSelect: '#flat', //имя таблицы, содержащей данные для вып. списка
-        idColSelect: 1  // номер столбца, содержащего данные для вып.  списка
+        idColSelect: 1 // номер столбца, содержащего данные для вып.  списка
     }
     document.querySelector('#openModalPlace').addEventListener('click', () => {
         getModalWindow(places);
-        console.log('Нажата кнопка мест')
+
     })
-    localStor(places) ;//Запуск функции загрузки данныех из  LS
+    localStor(places); //Запуск функции загрузки данныех из  LS
 
 } catch (error) {
     console.log('неполадочки в таблице мест')
@@ -171,9 +172,9 @@ try {
     const flat = {
         columnIdStr: 0,
         containerId: '#containerFree', //ИД контейнера
-        tableId: '#flat',//'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
-        modalButtonId: '#openModalFlat',//'#openModal',//ИД кнопки открытия мобильного окна
-        modalId: '#modal',//Ид модального окна
+        tableId: '#flat', //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
+        modalButtonId: '#openModalFlat', //'#openModal',//ИД кнопки открытия мобильного окна
+        modalId: '#modal', //Ид модального окна
         // classButtonClose: 'close', //класс кнопки закрытия
         // formId: '#form',
         //buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
@@ -184,8 +185,30 @@ try {
         console.log('нажата кнопка помещений2')
         getModalWindow(flat);
     })
-    localStor(flat);   //Запуск функции загрузки данныех из  LS
+    localStor(flat); //Запуск функции загрузки данныех из  LS
 
 } catch (error) {
     console.log('неполадочки в таблице ПОМЕЩЕНИЙ')
+}
+
+//Подзагрузка таблицы по ГРУППАМ
+try {
+    const group = {
+        columnIdStr: 0, //Номер столбца с ID кодом
+        containerId: '#containerGroup', //ИД контейнера
+        tableId: '#group', //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
+        modalButtonId: '#openModalGroup', //'#openModal',//ИД кнопки открытия модального окна
+        modalId: '#modal', //Ид модального окна
+        // buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
+        // idTableSelect: '#flat', //имя таблицы, содержащей данные для вып. списка
+        // idColSelect: 1 // номер столбца, содержащего данные для вып.  списка
+    }
+    document.querySelector('#openModalGroup').addEventListener('click', () => {
+        getModalWindow(group);
+
+    })
+    localStor(group); //Запуск функции загрузки данныех из  LS
+
+} catch (error) {
+    console.log('неподгружается таблица групп')
 }
