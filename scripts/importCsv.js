@@ -4,6 +4,10 @@ console.log('импорт CSV в работе');
 //функция загрузки CSV - файла
 function loadTableData(idTable, idInput, file) {
     console.log(idTable, idInput, file);
+    let csv = document.getElementById(idInput);
+    const tBody = document.querySelector(idTable).querySelector('tbody');
+
+    // const tBody = document.getElementById(idTable).querySelector('tbody')
 
     // csv.addEventListener('change', (event) => {
 
@@ -26,6 +30,7 @@ function loadTableData(idTable, idInput, file) {
             }
             tbody.appendChild(tr);
         }
+        localStorage.setItem(idTable, tBody.innerHTML);
         csv.style.display = 'none';
         // button.style.display = 'block';
     };
@@ -57,14 +62,23 @@ function loadTableData(idTable, idInput, file) {
 
 }
 
-//Защита от ошибок + Запуск функции подгрузки первой таблицы
+//Запуск функции подгрузки таблицы ВЕЩЕЙ и их мест
 try {
-    console.log(document.getElementById('csv'));
-    document.getElementById('csv').addEventListener('change', (event) => {
-        console.log('кнопка работает');
 
+    document.getElementById('csv').addEventListener('change', (event) => {
         const file = event.target.files[0];
         loadTableData('#thingsAndPlaсes', 'csv', file);
+    })
+} catch (error) {
+    console.log('не работает загрузка таблицы ВЕЩИ ПО МЕСТАМ')
+}
+
+//Запуск функции подгрузки таблицы  мест
+try {
+
+    document.getElementById('csvPlace').addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        loadTableData('#plase', 'csvPlace', file);
     })
 } catch (error) {
     console.log('не работает загрузка таблицы ВЕЩИ ПО МЕСТАМ')

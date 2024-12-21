@@ -15,20 +15,21 @@
   </head>
 
   <body>
-    <div id="containerOne">
+    <div id="containerOne" class="container">
+      <h2>ВЕЩИ</h2>
       <label for="csv"> Загрузите таблицу вещей из CSV =></label>
       <input id="csv" type="file" />
       <button id="saveAllTable">СОХРАНИТЬ в CSV все таблицы</button>
       <!-- <button id="hideOneTable">Скрыть исходную таблицу</button> -->
-      <button id="openModal">Определить вещь и место</button>
+      <button id="openModal">Определить вещь и ее место</button>
       <!-- <button id="clearLS">ОчиститьXXXLS</button> -->
       <div>
-        <button id="saveCSV">Отправить CSV</button>
+        <button id="saveCSV">Сохранить таблицу вещей в CSV-файл</button>
       </div>
 
       <table id="thingsAndPlaсes">
         <caption>
-          <h3>Вещи на местах</h3>
+          <h3>Таблица вещей и их мест</h3>
         </caption>
         <thead>
           <th>id_Вещи</th>
@@ -59,16 +60,19 @@
       </div>
     </div>
 
-    <div id="containerTwo">
+    <div id="containerTwo" class="container">
+      <h2>МЕСТА</h2>
+      <label for="csvPlace"> Загрузите таблицу МЕСТ из CSV =></label>
+      <input id="csvPlace" type="file" />
       <button id="openModalPlace">Внести новое место</button>
 
       <div>
-        <button id="saveCsvPlace">Отправить в CSV места</button>
+        <button id="saveCsvPlace">Сохранить таблицу мест в CSV-файле</button>
       </div>
 
       <table id="plase">
         <caption>
-          <h3>Места</h3>
+          <h3>Таблица мест</h3>
         </caption>
         <thead>
           <th>id_Места</th>
