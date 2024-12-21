@@ -15,11 +15,12 @@
 
   <body>
     <div id="containerOne">
+      <label for="csv"> Загрузите таблицу вещей из CSV =></label>
       <input id="csv" type="file" />
-      <button id="loadOneTable">Загрузить в LS исходную таблицу</button>
-      <button id="hideOneTable">Скрыть исходную таблицу</button>
-      <button id="openModal">Открыть форму</button>
-      <button id="clearLS">ОчиститьXXXLS</button>
+      <button id="saveAllTable">СОХРАНИТЬ в CSV все таблицы</button>
+      <!-- <button id="hideOneTable">Скрыть исходную таблицу</button> -->
+      <button id="openModal">Определить вещь и место</button>
+      <!-- <button id="clearLS">ОчиститьXXXLS</button> -->
       <div>
         <button id="saveCSV">Отправить CSV</button>
       </div>
@@ -58,7 +59,7 @@
     </div>
 
     <div id="containerTwo">
-      <button id="openModalPlace">Открыть форму места</button>
+      <button id="openModalPlace">Внести новое место</button>
 
       <div>
         <button id="saveCsvPlace">Отправить в CSV места</button>
@@ -103,7 +104,7 @@
       <button id="openModalGroup">Открыть форму группы</button>
 
       <div>
-        <button id="saveCsvPlace">Отправить в CSV группы</button>
+        <button id="saveCsvGroup">Отправить в CSV группы</button>
       </div>
       <table id="group">
         <caption>
