@@ -72,7 +72,7 @@ const getModalWindow = (modalWindow) => {
                 input.setAttribute('placeholder', th.textContent);
                 div.appendChild(input);
             }
-            if (index === modalWindow.idColSelect) { //создаем select для выпадающего списка и кладем в нужное поле
+            if (index === modalWindow.idInputSelect) { //создаем select для выпадающего списка и кладем в нужное поле
                 select.setAttribute('id', "points")
                 div.appendChild(select);
                 getSelect(select);
@@ -81,8 +81,9 @@ const getModalWindow = (modalWindow) => {
                 div.appendChild(input);
             }
 
-
         });
+
+
 
         //Добавление строк в таблицу
         buttonSubmit.addEventListener('click', (btn) => {
@@ -128,14 +129,14 @@ try {
         modalButtonId: '#openModal', //'#openModal',//ИД кнопки открытия мобильного окна
         modalId: '#modal', //Ид модального окна
         // buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
-        // idTableSelect: '#plase', //имя таблицы, содержащей данные для вып. списка
-        // idColSelect: 5 // номер столбца, содержащего данные для вып.  списка
+        idInputSelect: 4, //номер поля в форме, куда вставляется вып. список
+        idTableSelect: '#plase', //имя таблицы, содержащей данные для вып. списка
+        idColSelect: 3 // номер столбца таблицы, содержащего данные для вып.  списка
+
     }
     document.querySelector('#openModal').addEventListener('click', () => {
-        console.log('кнопка');
 
         getModalWindow(placesAndThings);
-
 
     })
     localStor(placesAndThings); //Запуск функции загрузки данныех из  LS
@@ -152,7 +153,8 @@ try {
         tableId: '#plase', //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
         modalButtonId: '#openModalPlace', //'#openModal',//ИД кнопки открытия мобильного окна
         modalId: '#modal', //Ид модального окна
-        buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
+        idInputSelect: 1, //номер поля в форме, куда вставляется вып. список
+        // buttonSubmitыId: '#submitPlaces', // класс кнопки внесения данных
         idTableSelect: '#flat', //имя таблицы, содержащей данные для вып. списка
         idColSelect: 1 // номер столбца, содержащего данные для вып.  списка
     }
