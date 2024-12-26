@@ -94,6 +94,70 @@ select {
   font-size: 18px;
   line-height: 130%;
 }
+
+
+.menu {
+
+  border: 2px solid;
+  /* border-color: red; */
+  margin: 40px;
+  border-radius: 40px;
+  align-self: center;
+  width: 400px;
+  height: 50px;
+
+  position: fixed;
+  background-color: aqua;
+
+  /* border: 1px solid red; помогает увидеть границы меню при настройке */
+}
+
+.menu_inner {
+
+  margin: 25px 0;
+  /* отступ сверху 25, а побокам 0 */
+  display: flex;
+  /* выводим блоки в одну строку */
+  justify-content: space-between;
+  /* Раскидываем блоки по краям */
+  align-items: center;
+  /* Выравнивание по вертикали */
+}
+
+#img_logo {
+  width: 400px;
+  height: 200px;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  /* Убираем кругляжки у элементов списка */
+  padding: 0;
+  margin: 0;
+
+
+}
+
+.nav li a {
+  text-transform: uppercase;
+  /* Делаем все буквы заглавными */
+  color: red;
+  /* Серый цвет текста */
+  text-decoration: none;
+  /* Убирает подчеркивание ссылки */
+  padding: 10px 15px;
+  /* отступы сверху 10px, а по бокам 20 */
+}
+
+.nav li a:hover {
+  /* Задание эффекта при наведении на ссылку */
+  background-color: #ffc744;
+  color: white;
+  border-radius: 5px;
+
+}
+
 .container {
   /* display: flex; */
   width: 150%;
@@ -102,4 +166,9 @@ select {
   margin: 40px;
   border-radius: 40px;
   align-self: center;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
 }

@@ -81,5 +81,27 @@ try {
         loadTableData('#plase', 'csvPlace', file);
     })
 } catch (error) {
-    console.log('не работает загрузка таблицы ВЕЩИ ПО МЕСТАМ')
+    console.log('не работает загрузка таблицы МЕСТ')
+}
+
+//Запуск функции подгрузки таблицы  ПОМЕЩЕНИЙ
+try {
+
+    document.getElementById('csvFlat').addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        loadTableData('#flat', 'csvFlat', file);
+    })
+} catch (error) {
+    console.log('не работает загрузка таблицы ПОМЕЩЕНИЙ')
+}
+
+//Запуск функции подгрузки таблицы  ГРУПП
+try {
+
+    document.getElementById('csvGroup').addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        loadTableData('#group', 'csvGroup', file);
+    })
+} catch (error) {
+    console.log('не работает загрузка таблицы ПОМЕЩЕНИЙ')
 }
