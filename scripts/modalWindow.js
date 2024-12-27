@@ -90,12 +90,14 @@ const getModalWindow = (modalWindow) => {
 
             const newRow = tabl.querySelector('tbody').insertRow();
             const cells = form.querySelectorAll('input, textarea, select');
-            console.log(cells)
+
             for (let i = 0; i < cells.length; i++) {
                 const newCell = newRow.insertCell(i);
                 newCell.textContent = cells[i].value;
 
             }
+
+            closeModal(modalWindow);
         });
 
 
@@ -108,6 +110,11 @@ const getModalWindow = (modalWindow) => {
     // И ПЕРЕЗАГРУЗКА СТРАНИЦЫ
 
     closeModalBtn.addEventListener('click', () => {
+        closeModal(modalWindow);
+    });
+
+    const closeModal = (modalWindow) => {
+
         modal.style.display = 'none';
         localStorage.setItem(modalWindow.tableId, tBody.innerHTML);
         form.querySelectorAll('input').forEach((input) => {
@@ -115,7 +122,7 @@ const getModalWindow = (modalWindow) => {
         })
         location.reload() // Перезагрузка страницы - еСЛИ ЭТОГО НЕ СДЕЛАТЬ, БЕЗ ПЕРЕГРУЗКИ, ДОБАВЛЕНИЕ БУДЕТ В ОБЕ ТАБЛИЦЫ
 
-    });
+    }
 
 }
 

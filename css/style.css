@@ -21,7 +21,7 @@ td {
   z-index: 2;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 500px;
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
@@ -95,9 +95,7 @@ select {
   line-height: 130%;
 }
 
-
 .menu {
-
   border: 2px solid;
   /* border-color: red; */
   margin: 40px;
@@ -113,7 +111,6 @@ select {
 }
 
 .menu_inner {
-
   margin: 25px 0;
   /* отступ сверху 25, а побокам 0 */
   display: flex;
@@ -135,8 +132,6 @@ select {
   /* Убираем кругляжки у элементов списка */
   padding: 0;
   margin: 0;
-
-
 }
 
 .nav li a {
@@ -155,7 +150,6 @@ select {
   background-color: #ffc744;
   color: white;
   border-radius: 5px;
-
 }
 
 .container {
