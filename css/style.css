@@ -118,7 +118,7 @@ select {
 .menu {
   position: fixed;
   right: 10px;
-  bottom: 50px;
+  top: 50px;
   border: 2px solid white;
   padding: 5px 10px;
   /* border-color: red; */
@@ -134,6 +134,8 @@ select {
   line-height: 28px;
   z-index: 1;
   user-select: none;
+  transform: scale(1);
+
 
 
 
