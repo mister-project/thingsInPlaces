@@ -117,8 +117,8 @@ select {
 
 .menu {
   position: fixed;
-  right: 10px;
-  top: 50px;
+  left: 10px;
+  top: 170px;
   border: 2px solid white;
   padding: 5px 10px;
   /* border-color: red; */
