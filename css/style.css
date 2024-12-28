@@ -146,6 +146,10 @@ select {
   /* border: 1px solid red; помогает увидеть границы меню при настройке */
 }
 
+@viewport {
+  user-zoom: fixed;
+}
+
 .menu_inner {
   margin: 10px 0;
   /* отступ сверху 25, а побокам 0 */
