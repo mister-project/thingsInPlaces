@@ -51,7 +51,7 @@ td {
 
 button {
   margin: 20 px;
-  width: 387px;
+  width: 200px;
   height: 50px;
   border-radius: 60px;
   margin-bottom: 18px;
@@ -101,8 +101,8 @@ select {
   margin: 40px;
   border-radius: 40px;
   align-self: center;
-  width: 400px;
-  height: 50px;
+  width: 200px;
+  height: 120px;
 
   position: fixed;
   background-color: aqua;
@@ -127,11 +127,11 @@ select {
 }
 
 .nav {
-  display: flex;
+  /* display: flex; */
   list-style: none;
   /* Убираем кругляжки у элементов списка */
-  padding: 0;
-  margin: 0;
+  /* padding: 0;
+  margin: 0; */
 }
 
 .nav li a {
@@ -141,8 +141,10 @@ select {
   /* Серый цвет текста */
   text-decoration: none;
   /* Убирает подчеркивание ссылки */
-  padding: 10px 15px;
+  /* padding: 20px 15px; */
   /* отступы сверху 10px, а по бокам 20 */
+  padding: 10px;
+  margin-bottom: 100px;
 }
 
 .nav li a:hover {
