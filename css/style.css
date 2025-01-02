@@ -3,19 +3,24 @@
   padding: 0;
 }
 
+/* .wrapper { */
+/* width: 80%;
+  max-width: 720px; */
+/* } */
+
 .container {
   /* display: flex; */
-  width: 150%;
+  width: 100%;
   border: 2px solid;
   border-color: red;
-  margin: 40px;
+  /* margin: 40px; */
   border-radius: 40px;
   align-self: center;
 }
 
 .container {
-  min-width: 960px;
-  max-width: 75%;
+
+  /* max-width: 75%; */
   margin: 0 auto;
 }
 
@@ -25,8 +30,10 @@ h2 {
 
 table {
   border-collapse: collapse;
-  width: 50%;
-  margin: 20px auto;
+  /* width: 50%;
+  margin: 20px auto; */
+  max-width: 75%;
+  margin: 0 auto;
 }
 
 th,

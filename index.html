@@ -19,143 +19,145 @@
 </head>
 
 <body>
+  <div class="wrapper">
 
+    <div class="menu">
 
-  <div class="menu">
-
-    <div class="menu_inner">
-      <!-- <div class="logo">
+      <div class="menu_inner">
+        <!-- <div class="logo">
           <img id="img_logo" src="./jmg/web-developer-logo.jpg" alt="" />
         </div> -->
-      <ul class="nav">
-        <li><a href="#group">Группы</a></li>
-        <li><a href="#flat">Помещения</a></li>
-        <li><a href="#place">Места</a></li>
-        <li><a href="#things">Вещи</a></li>
-      </ul>
+        <ul class="nav">
+          <li><a href="#group">Группы</a></li>
+          <li><a href="#flat">Помещения</a></li>
+          <li><a href="#place">Места</a></li>
+          <li><a href="#things">Вещи</a></li>
+        </ul>
+      </div>
+
     </div>
 
-  </div>
+    <div id="containerOne" class="container">
+      <A name="things"></A>
+      <h2>ВЕЩИ</h2>
+      <label for="csv"> Загрузите таблицу вещей из CSV =></label>
+      <input id="csv" type="file" />
+      <button id="saveAllTable">СОХРАНИТЬ в CSV все таблицы</button>
+      <!-- <button id="hideOneTable">Скрыть исходную таблицу</button> -->
+      <button id="openModal">Определить вещь и ее место</button>
+      <button id="clearLsThihks">Удалить вещи из LS</button>
+      <div>
+        <button id="saveCSV">Сохранить таблицу вещей в CSV-файл</button>
+      </div>
 
-  <div id="containerOne" class="container">
-    <A name="things"></A>
-    <h2>ВЕЩИ</h2>
-    <label for="csv"> Загрузите таблицу вещей из CSV =></label>
-    <input id="csv" type="file" />
-    <button id="saveAllTable">СОХРАНИТЬ в CSV все таблицы</button>
-    <!-- <button id="hideOneTable">Скрыть исходную таблицу</button> -->
-    <button id="openModal">Определить вещь и ее место</button>
-    <button id="clearLsThihks">Удалить вещи из LS</button>
-    <div>
-      <button id="saveCSV">Сохранить таблицу вещей в CSV-файл</button>
+      <table id="thingsAndPlaсes">
+        <caption>
+          <h3>Таблица вещей и их мест</h3>
+        </caption>
+        <thead>
+          <th>id_Вещи</th>
+          <th>Имя_вещи</th>
+          <th>Группа</th>
+          <th>id_Группы</th>
+          <th>место</th>
+          <th>id_места</th>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
 
-    <table id="thingsAndPlaсes">
-      <caption>
-        <h3>Таблица вещей и их мест</h3>
-      </caption>
-      <thead>
-        <th>id_Вещи</th>
-        <th>Имя_вещи</th>
-        <th>Группа</th>
-        <th>id_Группы</th>
-        <th>место</th>
-        <th>id_места</th>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <button id="updateButton">Обновить</button>
-      <form id="form">
-        <!-- <div>-->
-        <!--                 <select name="" id="points" >-->
-        <!-- <option value="30">Значение 1</option>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <button id="updateButton">Обновить</button>
+        <form id="form">
+          <!-- <div>-->
+          <!--                 <select name="" id="points" >-->
+          <!-- <option value="30">Значение 1</option>
             <option value="31">Значение 2</option>
             <option value="32">Значение 3</option>
             <option value="33">Значение 4</option> -->
-        <!--                         </select>-->
-      </form>
-      <button id="submit">Отправить в таблицу</button>
-    </div>
-  </div>
-
-  <div id="containerTwo" class="container">
-    <A name="place"></A>
-    <h2>МЕСТА</h2>
-    <label for="csvPlace"> Загрузите таблицу МЕСТ из CSV =></label>
-    <input id="csvPlace" type="file" />
-    <button id="openModalPlace">Внести новое место</button>
-
-    <div>
-      <button id="saveCsvPlace">Сохранить таблицу мест в CSV-файле</button>
+          <!--                         </select>-->
+        </form>
+        <button id="submit">Отправить в таблицу</button>
+      </div>
     </div>
 
-    <table id="plase">
-      <caption>
-        <h3>Таблица мест</h3>
-      </caption>
-      <thead>
-        <th>id_Места</th>
-        <th>Имя_места</th>
-        <th>Имя_помещения</th>
-        <th>Имя_совмещенное</th>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
+    <div id="containerTwo" class="container">
+      <A name="place"></A>
+      <h2>МЕСТА</h2>
+      <label for="csvPlace"> Загрузите таблицу МЕСТ из CSV =></label>
+      <input id="csvPlace" type="file" />
+      <button id="openModalPlace">Внести новое место</button>
+      <button id="clearLsPlace">Удалить Места из LS</button>
 
-  <!--Контейнер для помещений-->
-  <div id="containerFree" class="container">
-    <A name="flat"></A>
-    <h2>ПОМЕЩЕНИЯ</h2>
-    <label for="csvFlat"> Загрузите таблицу Помещений из CSV =></label>
-    <input id="csvFlat" type="file" />
-    <button id="openModalFlat">Внести помещение</button>
+      <div>
+        <button id="saveCsvPlace">Сохранить таблицу мест в CSV-файле</button>
+      </div>
 
-    <div>
-      <button id="saveCsvFlat">Отправить в CSV помещения</button>
+      <table id="plase">
+        <caption>
+          <h3>Таблица мест</h3>
+        </caption>
+        <thead>
+          <th>id_Места</th>
+          <th>Имя_места</th>
+          <th>Имя_помещения</th>
+          <th>Имя_совмещенное</th>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
 
-    <table id="flat">
-      <caption>
-        <h3>Помещения</h3>
-      </caption>
-      <thead>
-        <th>id_Помещения</th>
-        <th>Имя_помещения</th>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
+    <!--Контейнер для помещений-->
+    <div id="containerFree" class="container">
+      <A name="flat"></A>
+      <h2>ПОМЕЩЕНИЯ</h2>
+      <label for="csvFlat"> Загрузите таблицу Помещений из CSV =></label>
+      <input id="csvFlat" type="file" />
+      <button id="openModalFlat">Внести помещение</button>
 
-  <!-- КОНТЕЙНЕР ГРУПП -->
-  <div id="containerGroup" class="container">
-    <A name="group"></A>
-    <h2>ГРУППЫ</h2>
-    <label for="csvGroup"> Загрузите таблицу Групп из CSV =></label>
-    <input id="csvGroup" type="file" />
-    <button id="openModalGroup">Открыть форму группы</button>
+      <div>
+        <button id="saveCsvFlat">Отправить в CSV помещения</button>
+      </div>
 
-    <div>
-      <button id="saveCsvGroup">Отправить в CSV группы</button>
+      <table id="flat">
+        <caption>
+          <h3>Помещения</h3>
+        </caption>
+        <thead>
+          <th>id_Помещения</th>
+          <th>Имя_помещения</th>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
-    <div>
-      <button id="clearLsGroup">Удалить группы из LS</button>
+
+    <!-- КОНТЕЙНЕР ГРУПП -->
+    <div id="containerGroup" class="container">
+      <A name="group"></A>
+      <h2>ГРУППЫ</h2>
+      <label for="csvGroup"> Загрузите таблицу Групп из CSV =></label>
+      <input id="csvGroup" type="file" />
+      <button id="openModalGroup">Открыть форму группы</button>
+
+      <div>
+        <button id="saveCsvGroup">Отправить в CSV группы</button>
+      </div>
+      <div>
+        <button id="clearLsGroup">Удалить группы из LS</button>
+      </div>
+      <table id="group">
+        <caption>
+          <h3>Группы вещей</h3>
+        </caption>
+        <thead>
+          <th>id_Группы</th>
+          <th>Имя_группы</th>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
-    <table id="group">
-      <caption>
-        <h3>Группы вещей</h3>
-      </caption>
-      <thead>
-        <th>id_Группы</th>
-        <th>Имя_группы</th>
-      </thead>
-      <tbody></tbody>
-    </table>
   </div>
 </body>
 
