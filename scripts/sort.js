@@ -11,9 +11,9 @@ const tableSort = (idTable) => {
     .slice(1)
   sortedRows.forEach((str) => {
 
-    str.insertCell(0);
-    str.cells[0].innerText = `${str.cells[1].innerText}${str.cells[2].innerText}`;
-    str.cells[0].style.display = 'none';
+    // str.insertCell(0);
+    // str.cells[0].innerText = `${str.cells[1].innerText}${str.cells[2].innerText}`;
+    // str.cells[0].style.display = 'none';
   })
 
   console.log(sortedRows);
@@ -28,10 +28,6 @@ const tableSort = (idTable) => {
 
 
 
-// document.querySelector('.close').addEventListener('click', () => {
-//   tableSort(idTable);
-
-// })
 
 
 try {
