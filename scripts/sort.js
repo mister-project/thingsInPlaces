@@ -6,7 +6,7 @@ console.log('Sort.js работает')
 const tableSort = (idTable) => {
 
   const table = document.querySelector(idTable);
-  console.log(table.querySelectorAll('tr'))
+
   let sortedRows = Array.from(table.rows)
     .slice(1)
   sortedRows.forEach((str) => {
@@ -16,7 +16,7 @@ const tableSort = (idTable) => {
     // str.cells[0].style.display = 'none';
   })
 
-  console.log(sortedRows);
+
 
   // sortedRows.sort((rowA, rowB,) => rowA.cells[0].innerText > rowB.cells[0].innerText);
   sortedRows.sort((rowA, rowB,) => rowA.cells[0].innerText < rowB.cells[0].innerText ? 1 : -1);
@@ -25,9 +25,6 @@ const tableSort = (idTable) => {
   table.tBodies[0].append(...sortedRows);
 
 }
-
-
-
 
 
 try {

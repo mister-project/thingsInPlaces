@@ -2,13 +2,8 @@
 console.log('filtr.js в работе')
 
 const getFilter = (idInput, idTable) => {
-
-
     const filter = document.querySelector(idInput);
-
-
     let strTable = document.querySelector(idTable).querySelector('tbody').querySelectorAll('tr')
-    console.log(strTable);
 
     // let strTableNo = document.querySelectorAll('.trNoFilter')
     // // console.log(document.querySelector('span'))
