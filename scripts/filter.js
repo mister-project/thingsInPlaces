@@ -34,5 +34,11 @@ const getFilter = (idInput, idTable) => {
     })
 
 };
+// Фильтр для строк таблицы вещей
+try {
+    getFilter('#filter', "#thingsAndPlaсes")
+} catch (error) {
+    console.log('Не работает фильтр для таблицы вещей');
 
-getFilter('#filter', "#thingsAndPlaсes")
+}
+
