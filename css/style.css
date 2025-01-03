@@ -118,7 +118,7 @@ select {
 
 .menu {
   position: fixed;
-  left: 10px;
+  right: 10px;
   top: 170px;
   border: 2px solid white;
   padding: 5px 10px;
@@ -139,7 +139,7 @@ select {
 
   background-color: aqua;
 
-  -webkit-backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden; */
 
 
   /* border: 1px solid red; помогает увидеть границы меню при настройке */
