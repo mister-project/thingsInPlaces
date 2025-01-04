@@ -40,7 +40,7 @@ const getSelect = (selectObject) => {
 
     document.querySelector(selectObject.idTableSelect).querySelector('tbody').querySelectorAll('tr').forEach(str => {
         let option = document.createElement('option')
-        option.value = str.querySelectorAll('td')[selectObject.nameColSelect].innerText
+        option.value = str.querySelectorAll('td')[selectObject.idColSelect].innerText
         option.innerText = str.querySelectorAll('td')[selectObject.nameColSelect].innerText
         select.add(option)
     });

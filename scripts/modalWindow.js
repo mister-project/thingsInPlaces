@@ -36,7 +36,7 @@ const getModalWindow = (modalWindow) => {
 
             // selectContainer.appendChild(option);
             option.innerText = str.querySelectorAll('td')[modalWindow.idColSelect].innerText
-            option.value = str.querySelectorAll('td')[modalWindow.idColSelect].innerText
+            option.value = str.querySelectorAll('td')[modalWindow.idColSelectValue].innerText
 
             document.querySelector('#points').appendChild(option);
             console.log(option.innerText)
@@ -83,19 +83,44 @@ const getModalWindow = (modalWindow) => {
 
         });
 
+        // Слушаем форму и поля на изменение полей для добавления идентификаторов из других таблиц
+
+        // form.addEventListener('change', () => {
+        //     console.log(form.querySelectorAll('select'));
 
 
+        // })
+
+        const insertId = (arg, val) => {
+
+            const cells = form.querySelectorAll('input, textarea, select')
+            cells.forEach((el, index) => {
+                if (index === arg + 1) {
+                    el.value = val;
+                    // console.log(el.value);
+
+                }
+
+            })
+        }
         //Добавление строк в таблицу
         buttonSubmit.addEventListener('click', (btn) => {
 
             const newRow = tabl.querySelector('tbody').insertRow();
             const cells = form.querySelectorAll('input, textarea, select');
 
+
             for (let i = 0; i < cells.length; i++) {
                 const newCell = newRow.insertCell(i);
-                newCell.textContent = cells[i].value;
+                if (cells[i].localName === 'select') {
+                    newCell.textContent = cells[i].textContent
+                    insertId(i, cells[i].value);
+                } else {
+                    newCell.textContent = cells[i].value;
+                }
 
             }
+            // debugger;
 
             closeModal(modalWindow);
         });
@@ -138,7 +163,8 @@ try {
         // buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
         idInputSelect: 4, //номер поля в форме, куда вставляется вып. список
         idTableSelect: '#plase', //имя таблицы, содержащей данные для вып. списка
-        idColSelect: 3 // номер столбца таблицы, содержащего данные для вып.  списка
+        idColSelect: 3, // номер столбца таблицы, содержащего данные для вып.  списка
+        idColSelectValue: 0
 
     }
     document.querySelector('#openModal').addEventListener('click', () => {
@@ -164,6 +190,7 @@ try {
         // buttonSubmitыId: '#submitPlaces', // класс кнопки внесения данных
         idTableSelect: '#flat', //имя таблицы, содержащей данные для вып. списка
         idColSelect: 1 // номер столбца, содержащего данные для вып.  списка
+
     }
     document.querySelector('#openModalPlace').addEventListener('click', () => {
         getModalWindow(places);
