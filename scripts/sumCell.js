@@ -4,14 +4,14 @@ const getSumCell = (idTable) => {
 
     let sumCell = Array.from(table.rows)
         .slice(1) //отсекли заголовки
-   //перебор строк и сложение нужных ячеек
+    //перебор строк и сложение нужных ячеек
     sumCell.forEach((str) => {
-        str.cells[3].innerText = `${str.cells[1].innerText}/${str.cells[2].innerText}`;
+        str.cells[4].innerText = `${str.cells[2].innerText}/${str.cells[1].innerText}`;
     })
 }
 try {
-  
-       getSumCell('#plase');
+
+    getSumCell('#plase');
 
 
 } catch (error) {

@@ -90,7 +90,7 @@ const getModalWindow = (modalWindow) => {
 
 
         // })
-
+        //Функция вставки в таблицу ID выбранного селекта - запускается при САБМИТЕ ФОРМЫ 
         const insertId = (arg, val) => {
 
             const cells = form.querySelectorAll('input, textarea, select')
@@ -113,7 +113,10 @@ const getModalWindow = (modalWindow) => {
             for (let i = 0; i < cells.length; i++) {
                 const newCell = newRow.insertCell(i);
                 if (cells[i].localName === 'select') {
-                    newCell.textContent = cells[i].textContent
+
+                    console.log();
+                    // newCell.textContent = cells[i].textContent
+                    newCell.textContent = cells[i].options[cells[i].selectedIndex].text
                     insertId(i, cells[i].value);
                 } else {
                     newCell.textContent = cells[i].value;
@@ -163,8 +166,8 @@ try {
         // buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
         idInputSelect: 4, //номер поля в форме, куда вставляется вып. список
         idTableSelect: '#plase', //имя таблицы, содержащей данные для вып. списка
-        idColSelect: 3, // номер столбца таблицы, содержащего данные для вып.  списка
-        idColSelectValue: 0
+        idColSelect: 4, // номер столбца таблицы, содержащего данные для вып.  списка
+        idColSelectValue: 0 // номер столбца в таблице, откуда берем ID (value) вставляемого значения
 
     }
     document.querySelector('#openModal').addEventListener('click', () => {
@@ -186,10 +189,11 @@ try {
         tableId: '#plase', //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
         modalButtonId: '#openModalPlace', //'#openModal',//ИД кнопки открытия мобильного окна
         modalId: '#modal', //Ид модального окна
-        idInputSelect: 1, //номер поля в форме, куда вставляется вып. список
+        idInputSelect: 2, //номер поля в форме, куда вставляется вып. список
         // buttonSubmitыId: '#submitPlaces', // класс кнопки внесения данных
         idTableSelect: '#flat', //имя таблицы, содержащей данные для вып. списка
-        idColSelect: 1 // номер столбца, содержащего данные для вып.  списка
+        idColSelect: 1, // номер столбца, содержащего данные для вып.  списка
+        idColSelectValue: 0
 
     }
     document.querySelector('#openModalPlace').addEventListener('click', () => {

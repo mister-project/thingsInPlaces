@@ -2,7 +2,6 @@
 console.log('Sort.js работает')
 
 
-
 const tableSort = (idTable) => {
 
   const table = document.querySelector(idTable);
@@ -15,7 +14,6 @@ const tableSort = (idTable) => {
     // str.cells[0].innerText = `${str.cells[1].innerText}${str.cells[2].innerText}`;
     // str.cells[0].style.display = 'none';
   })
-
 
 
   // sortedRows.sort((rowA, rowB,) => rowA.cells[0].innerText > rowB.cells[0].innerText);
