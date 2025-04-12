@@ -114,7 +114,19 @@ select {
   font-family: "Steppe-ExtraBold", sans-serif;
   font-size: 18px;
   line-height: 130%;
+  /* display: none; Скрываем стандартный select */
+  
 }
+
+select.show {
+  display: block; /* Показываем выбор при активации */
+}
+
+select option {
+  padding: 10px;
+}
+
+
 
 .menu {
   position: fixed;
