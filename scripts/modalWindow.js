@@ -31,7 +31,7 @@ const getModalWindow = (modalWindow) => {
 
   //Функция для ФОРМИРОВАНИя строк выпадающего СПИСКА
   const getSelect = () => {
-    console.log(document.querySelector("#points"));
+    // console.log(document.querySelector("#points"));
     document
       .querySelector(modalWindow.idTableSelect)
       .querySelector("tbody")
@@ -89,6 +89,7 @@ const getModalWindow = (modalWindow) => {
 
         //создаем select для выпадающего списка и кладем в нужное поле
         select.setAttribute("id", "points");
+        select.setAttribute("size", "5");
         div.appendChild(select);
         getSelect(select);
       } else {
@@ -106,22 +107,24 @@ const getModalWindow = (modalWindow) => {
     //Функция вставки в таблицу ID выбранного селекта - запускается при САБМИТЕ ФОРМЫ
     const insertId = (arg, val) => {
       const cells = form.querySelectorAll("input, textarea, select");
+      console.log(cells);
+
       cells.forEach((el, index) => {
         if (index === arg + 1) {
           el.value = val;
-          // console.log(el.value);
+          console.log(el.value);
         }
       });
     };
     //Добавление строк в таблицу
     buttonSubmit.addEventListener("click", (btn) => {
+      console.log("жмяк");
       const newRow = tabl.querySelector("tbody").insertRow();
       const cells = form.querySelectorAll("input, textarea, select");
 
       for (let i = 0; i < cells.length; i++) {
         const newCell = newRow.insertCell(i);
         if (cells[i].localName === "select") {
-          console.log();
           // newCell.textContent = cells[i].textContent
           newCell.textContent = cells[i].options[cells[i].selectedIndex].text;
           insertId(i, cells[i].value);

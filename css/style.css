@@ -100,13 +100,15 @@ input {
 }
 
 select {
+  /* display: none;  */
+  /* Скрываем стандартный select */
   border: 1px solid rgb(196, 33, 33);
   border-radius: 60px;
   margin-bottom: 16px;
-  padding: 24px 22px;
+  padding: 0px 22px;
   font-size: 18px;
   width: 385px;
-  height: 68px;
+  height: 150px;
   background: transparent;
   box-sizing: border-box;
   outline: none;
