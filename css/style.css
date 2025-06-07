@@ -42,7 +42,7 @@ td {
   z-index: 2;
   left: 0;
   top: 0;
-  width: 500px;
+  width: 30%px;
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
@@ -107,7 +107,7 @@ select {
   margin-bottom: 16px;
   padding: 0px 22px;
   font-size: 18px;
-  width: 385px;
+  width: 100%;
   height: 150px;
   background: transparent;
   box-sizing: border-box;
@@ -117,7 +117,6 @@ select {
   font-size: 18px;
   line-height: 130%;
   /* display: none; Скрываем стандартный select */
-  
 }
 
 select.show {
@@ -127,8 +126,6 @@ select.show {
 select option {
   padding: 10px;
 }
-
-
 
 .menu {
   position: fixed;
@@ -154,7 +151,6 @@ select option {
   background-color: aqua;
 
   /* -webkit-backface-visibility: hidden; */
-
 
   /* border: 1px solid red; помогает увидеть границы меню при настройке */
 }
@@ -185,7 +181,6 @@ select option {
   /* Убираем кругляжки у элементов списка */
   padding: 10px;
   margin: 0;
-
 }
 
 .nav li {
