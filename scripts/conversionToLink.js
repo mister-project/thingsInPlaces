@@ -17,7 +17,7 @@ function convertTextToLinks() {
         const link = document.createElement("a");
         link.href = cellContent; // Устанавливаем адрес ссылки
         link.target = "_blank"; // Открывать в новой вкладке
-        link.innerText = cellContent; // Устанавливаем текст ссылки
+        link.innerText = "Фото"; // Устанавливаем текст ссылки
 
         // Очищаем содержимое ячейки и добавляем ссылку
         cell.innerHTML = "";
@@ -28,4 +28,8 @@ function convertTextToLinks() {
 }
 
 // Вызываем функцию преобразования
-convertTextToLinks();
+try {
+  document.querySelector("#shortLinks").addEventListener("click", () => {
+    convertTextToLinks();
+  });
+} catch (error) {}
