@@ -16,6 +16,8 @@
   <script src="./scripts/sort.js" defer></script>
   <script src="./scripts/filter.js" defer></script>
   <script src="./scripts/searchInput.js" defer></script>
+  <script src="./scripts/exportToJson.js" defer></script>
+  <script src="./scripts/importJson.js" defer></script>
   <!-- <script src="./scripts/createSelect_two.js" defer></script> -->
   <title>ВЕЩАТОР</title>
 </head>
@@ -39,20 +41,25 @@
     <div id="containerOne" class="container">
       <a name="things"></a>
       <h2>ВЕЩИ</h2>
-      <label for="csv"> Загрузите таблицу вещей из CSV =></label>
+      <label for="csv">ИЗ CSV =></label>
       <input id="csv" type="file" />
-      <button id="saveAllTable">СОХРАНИТЬ в CSV все таблицы</button>
+      <label for="csv">ИЗ JSON =></label>
+      <input type="file" id="fileInput" accept=".json" />
+      <div>
+        <button id="saveCSV">Сохранить таблицу вещей в CSV-файл</button>
+        <button id="saveAllTable">СОХРАНИТЬ в CSV все таблицы</button>
+        <button id="downloadBtnJson">СОХРАНИТЬ в JSON все таблицы</button>
+      </div>
       <!-- <button id="hideOneTable">Скрыть исходную таблицу</button> -->
       <button id="openModal">Определить вещь и ее место</button>
       <button id="clearLsThihks">Удалить вещи из LS</button>
+
+      <button id="shortLinks">Активировать ссылки</button>
       <div>
-        <button id="saveCSV">Сохранить таблицу вещей в CSV-файл</button>
+        <input type="text" id="filter" placeholder="Фильтровать вещи" />
+
+        <button id="btnFilter">Фильтровать</button>
       </div>
-      <div>
-        <button id="shortLinks">Активировать ссылки</button>
-      </div>
-      <input type="text" id="filter" placeholder="Фильтровать вещи" />
-      <button id="btnFilter">Фильтровать</button>
       <table id="thingsAndPlaсes">
         <caption>
           <h3>Таблица вещей и их мест</h3>
