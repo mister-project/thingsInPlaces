@@ -10,7 +10,7 @@ document
     tables.forEach((table) => {
       const tableId = table.id;
       const headers = Array.from(table.querySelectorAll("thead th")).map(
-        (th) => th.innerText
+        (th) => th.id
       );
       const rows = Array.from(table.querySelectorAll("tbody tr"));
 
