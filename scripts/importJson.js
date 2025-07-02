@@ -1,3 +1,9 @@
+// скрипт загрузки данных из JSON
+// код для
+// HTML:
+//     <label htmlFor="csv">ИЗ JSON =></label>
+// <input type="file" id="fileInput" accept=".json"/>
+
 document
   .getElementById("fileInput")
   .addEventListener("change", function (event) {
@@ -36,5 +42,6 @@ function populateTables(data) {
       // Добавляем строку в таблицу
       tableBody.appendChild(row);
     });
+    localStorage.setItem(`#${tableId}`, tableBody.innerHTML);
   }
 }
